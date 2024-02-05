@@ -1,5 +1,6 @@
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 
 const canvas = document.getElementById("three");
 
@@ -33,6 +34,8 @@ if (canvas) {
       break;
   }
 
+  const gltfLoader = new GLTFLoader();
+
   const mesh = new THREE.Mesh(
     shape,
     new THREE.MeshBasicMaterial({
@@ -41,6 +44,9 @@ if (canvas) {
     })
   );
   scene.add(mesh);
+
+  const ambientLight = new THREE.AmbientLight(0xffffff, 4);
+  scene.add(ambientLight);
 
   const camera = new THREE.PerspectiveCamera(
     45,
@@ -59,6 +65,7 @@ if (canvas) {
   const renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true });
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
   renderer.setClearColor(variables.sceneColor);
+  renderer.outputColorSpace = THREE.SRGBColorSpace;
 
   window.addEventListener("resize", () => {
     sizes.height = canvas.clientHeight;
