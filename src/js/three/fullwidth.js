@@ -2,7 +2,7 @@ import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 
-const canvas = document.getElementById("three");
+const canvas = document.getElementById("three-fullwidth");
 
 if (canvas) {
   const scene = new THREE.Scene();
@@ -49,7 +49,7 @@ if (canvas) {
   scene.add(ambientLight);
 
   const camera = new THREE.PerspectiveCamera(
-    45,
+    65,
     sizes.width / sizes.height,
     0.1,
     100
@@ -66,6 +66,7 @@ if (canvas) {
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
   renderer.setClearColor(variables.sceneColor);
   renderer.outputColorSpace = THREE.SRGBColorSpace;
+  renderer.setSize(sizes.width, sizes.height);
 
   window.addEventListener("resize", () => {
     sizes.height = canvas.clientHeight;
@@ -74,6 +75,7 @@ if (canvas) {
     camera.aspect = sizes.width / sizes.height;
     camera.updateProjectionMatrix();
 
+    renderer.setSize(sizes.width, sizes.height);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
   });
 

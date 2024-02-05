@@ -1,0 +1,15 @@
+.fullwidth {
+  aspect-ratio: 16 / 9;
+  align-items: center;
+  height: auto;
+  max-height: 800px;
+  padding: 4rem;
+  width: 100%;
+
+  canvas {
+    border-radius: 16px;
+    box-shadow: -1px 3px 21px -6px rgba(0, 0, 0, 0.35);
+    height: 100% !important;
+    width: 100% !important;
+  }
+}

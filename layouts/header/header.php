@@ -25,6 +25,6 @@ $shape = get_sub_field($prefix . 'shape');
     ?>
   </div>
   <div class="experience">
-    <canvas id="three" data-mesh-color="<?php echo $mesh_color; ?>" data-scene-color="<?php echo $scene_color; ?>" data-wireframe="<?php echo $wireframe; ?>" data-shape="<?php echo $shape; ?>"></canvas>
+    <canvas id="three-header" data-mesh-color="<?php echo $mesh_color; ?>" data-scene-color="<?php echo $scene_color; ?>" data-wireframe="<?php echo $wireframe; ?>" data-shape="<?php echo $shape; ?>"></canvas>
   </div>
 </section>

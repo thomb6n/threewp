@@ -1,2 +1,3 @@
 import "../css/styles.css";
-import "./three";
+import "./three/header";
+import "./three/fullwidth";
