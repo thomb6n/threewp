@@ -1,6 +1,7 @@
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
+import duckModel from "../../models/YellowDuck.glb";
 
 const canvas = document.getElementById("three-fullwidth");
 
@@ -35,6 +36,11 @@ if (canvas) {
   }
 
   const gltfLoader = new GLTFLoader();
+  gltfLoader.load(duckModel, (glb) => {
+    scene.add(glb.scene);
+    glb.scene.scale.set(0.1, 0.1, 0.1);
+    glb.scene.position.set(0, -0.8, 0);
+  });
 
   const mesh = new THREE.Mesh(
     shape,
@@ -43,7 +49,7 @@ if (canvas) {
       wireframe: variables.wireframe === "1" ? true : false,
     })
   );
-  scene.add(mesh);
+  // scene.add(mesh);
 
   const ambientLight = new THREE.AmbientLight(0xffffff, 4);
   scene.add(ambientLight);
