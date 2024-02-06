@@ -7,7 +7,8 @@ if (have_posts()) {
     if (have_rows('layouts')) {
       while (have_rows('layouts')) {
         the_row();
-        get_template_part('layouts/' . get_row_layout() . '/' . get_row_layout());
+        $filename = str_replace('_', '-', get_row_layout());
+        get_template_part('layouts/' . $filename . '/' . $filename);
       }
     }
   }

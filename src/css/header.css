@@ -2,28 +2,19 @@ header {
   align-items: center;
   display: flex;
   justify-content: space-between;
-  padding: 4rem;
+  padding: 1rem;
 
-  .site-branding {
-    font-size: 20px;
-
-    a {
-      color: #2092cc;
-    }
+  @media screen and (min-width: 40rem) {
+    padding-inline: 2rem;
   }
 
   nav {
     ul {
       display: flex;
-      font-size: 20px;
-      gap: 2rem;
+      gap: 1rem;
       list-style: none;
       margin: 0;
       padding: 0;
-
-      a {
-        color: #2092cc;
-      }
     }
   }
 }

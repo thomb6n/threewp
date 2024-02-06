@@ -8,7 +8,7 @@ if (class_exists('acf')) {
   require_once 'includes/acf.php';
 }
 
-function load_assets() {
-  wp_enqueue_script('twp-bundle', get_template_directory_uri() . '/dist/bundle.js', [], false, true);
+function jmb_load_assets() {
+  wp_enqueue_script('jmb-bundle', get_template_directory_uri() . '/dist/bundle.js', array(), false, true);
 }
-add_action('wp_enqueue_scripts', 'load_assets');
+add_action('wp_enqueue_scripts', 'jmb_load_assets');

@@ -1,8 +1,8 @@
 <?php
-function register_layouts() {
-  $layouts = [];
+function jmb_register_layouts() {
+  $layouts = array();
   $layouts_dir = THEME_DIR . '/layouts';
-  $layout_dirs = array_diff(scandir($layouts_dir), ['..', '.']);
+  $layout_dirs = array_diff(scandir($layouts_dir), array('..', '.'));
 
   foreach ($layout_dirs as $dir) {
     $acf_file = "$layouts_dir/$dir/acf.php";
@@ -12,37 +12,39 @@ function register_layouts() {
     }
   }
 
-  acf_add_local_field_group([
-    'key' => 'group_layouts',
-    'title' => 'Layouts',
-    'fields' => [
-      [
-        'key' => 'field_layouts',
-        'name' => 'layouts',
-        'label' => 'Layouts',
-        'type' => 'flexible_content',
-        'layouts' => $layouts,
-        'button_label' => 'Add layout'
-      ]
-    ],
-    'location' => [
-      [
-        [
-          'param' => 'post_type',
-          'operator' => '==',
-          'value' => 'page'
-        ]
-      ]
-    ],
-    'menu_order' => 0,
-    'position' => 'acf_after_title',
-    'style' => 'default',
-    'label_placement' => 'top',
-    'instruction_placement' => 'label',
-    'active' => true,
-    'hide_on_screen' => [
-      0 => 'the_content'
-    ]
-  ]);
+  acf_add_local_field_group(
+    array(
+      'key' => 'group_layouts',
+      'title' => 'Layouts',
+      'fields' => array(
+        array(
+          'key' => 'field_layouts',
+          'name' => 'layouts',
+          'label' => 'Layouts',
+          'type' => 'flexible_content',
+          'layouts' => $layouts,
+          'button_label' => 'Add layout'
+        )
+      ),
+      'location' => array(
+        array(
+          array(
+            'param' => 'post_type',
+            'operator' => '==',
+            'value' => 'page'
+          )
+        )
+      ),
+      'menu_order' => 0,
+      'position' => 'acf_after_title',
+      'style' => 'default',
+      'label_placement' => 'top',
+      'instruction_placement' => 'label',
+      'active' => true,
+      'hide_on_screen' => array(
+        0 => 'the_content'
+      )
+    )
+  );
 }
-add_action('acf/include_fields', 'register_layouts');
+add_action('acf/include_fields', 'jmb_register_layouts');
