@@ -1,12 +1,5 @@
 @import url(typography.css);
 
-:root {
-  --primary-color: #758184;
-  --primary-color-light: #d8e4e7;
-  --secondary-color: #8c8f94;
-  --secondary-color-light: #dbe0e8;
-}
-
 * {
   box-sizing: border-box;
 }
@@ -18,45 +11,16 @@ body {
 
 section {
   max-width: 1200px;
-  margin: 2rem auto;
-  padding-inline: 1rem;
-
-  &:first-of-type {
-    margin-top: 0;
-  }
-
-  @media screen and (min-width: 40rem) {
-    padding-inline: 2rem;
-  }
+  margin: 4rem auto;
+  padding-inline: 15px;
 }
 
-.background-primary {
-  background-color: var(--primary-color);
+section:first-of-type {
+  margin-top: 0;
 }
-
-.background-primary-light {
-  background-color: var(--primary-color-light);
-}
-
-.background-secondary {
-  background-color: var(--secondary-color);
-}
-
-.background-secondary-light {
-  background-color: var(--secondary-color-light);
-}
-
-.dark-text {
-  color: #111;
-}
-
-.light-text {
-  color: white;
-}
-
-@import url(components.css);
 
 @import url(header.css);
 
 @import url(layouts/header.css);
-@import url(layouts/callout.css);
+@import url(layouts/fullwidth.css);
+@import url(layouts/columns.css);

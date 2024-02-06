@@ -1,23 +1,11 @@
 <?php
-$layout_name = 'header';
+$layout_name = 'fullwidth';
 
 $layouts[$layout_name] = [
   'key' => 'layout_' . $layout_name,
   'name' => $layout_name,
-  'label' => 'Header',
+  'label' => 'Full Width',
   'sub_fields' => [
-    [
-      'key' => 'field_' . $layout_name . '_title',
-      'name' => $layout_name . '_title',
-      'label' => 'Title',
-      'type' => 'text'
-    ],
-    [
-      'key' => 'field_' . $layout_name . '_subtext',
-      'name' => $layout_name . '_subtext',
-      'label' => 'Subtext',
-      'type' => 'text'
-    ],
     [
       'key' => 'field_' . $layout_name . '_mesh_color',
       'name' => $layout_name . '_mesh_color',
