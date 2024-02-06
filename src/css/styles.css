@@ -9,7 +9,18 @@ body {
   margin: 0;
 }
 
+section {
+  max-width: 1200px;
+  margin: 4rem auto;
+  padding-inline: 15px;
+}
+
+section:first-of-type {
+  margin-top: 0;
+}
+
 @import url(header.css);
 
 @import url(layouts/header.css);
 @import url(layouts/fullwidth.css);
+@import url(layouts/columns.css);

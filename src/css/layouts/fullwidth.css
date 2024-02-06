@@ -1,9 +1,7 @@
 .fullwidth {
-  aspect-ratio: 16 / 9;
   align-items: center;
-  height: auto;
-  max-height: 800px;
-  padding: 4rem 2rem;
+  aspect-ratio: 16 / 6;
+  display: block;
   width: 100%;
 
   canvas {
